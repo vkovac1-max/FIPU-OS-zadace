@@ -1,0 +1,438 @@
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % mkdir -p vjezba_2/data
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % ls
+vjezba_2
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % ls -r
+vjezba_2
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % ls -R
+vjezba_2
+
+./vjezba_2:
+data
+
+./vjezba_2/data:
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % mkdir vjezba_2/backup
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % ls -R
+vjezba_2
+
+./vjezba_2:
+backup	data
+
+./vjezba_2/backup:
+
+./vjezba_2/data:
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % tree
+.
+└── vjezba_2
+    ├── backup
+    └── data
+
+4 directories, 0 files
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % cd vjezba_2/data 
+vilistudyuser@Wills-MacBook-Pro data % touch script.js style.css .env
+vilistudyuser@Wills-MacBook-Pro data % clear
+
+vilistudyuser@Wills-MacBook-Pro data % pwd                                    
+/Users/vilistudyuser/Vili/College_Files/Pula/2semestar/OS/Github/FIPU-OS-zadace/OS-2zadaca/vjezba_2/data
+vilistudyuser@Wills-MacBook-Pro data % ls
+script.js	style.css
+vilistudyuser@Wills-MacBook-Pro data % ls -a
+.		..		.env		script.js	style.css
+vilistudyuser@Wills-MacBook-Pro data % echo 'console.log("Hello, World!")' > script.js 
+vilistudyuser@Wills-MacBook-Pro data % echo 'body { background-color: #f0f0f0; }' > style.css 
+vilistudyuser@Wills-MacBook-Pro data % cat script.js 
+console.log("Hello, World!")
+vilistudyuser@Wills-MacBook-Pro data % car style.css
+zsh: command not found: car
+vilistudyuser@Wills-MacBook-Pro data % cat style.css 
+body { background-color: #f0f0f0; }
+vilistudyuser@Wills-MacBook-Pro data % echo 'VJEZBE=0S'
+VJEZBE=0S
+vilistudyuser@Wills-MacBook-Pro data % cat .env 
+vilistudyuser@Wills-MacBook-Pro data % echo 'VJEZBE=0S' > .env 
+vilistudyuser@Wills-MacBook-Pro data % cat .env               
+VJEZBE=0S
+vilistudyuser@Wills-MacBook-Pro data % cat script.js style.css .env 
+console.log("Hello, World!")
+body { background-color: #f0f0f0; }
+VJEZBE=0S
+vilistudyuser@Wills-MacBook-Pro data % git add .
+vilistudyuser@Wills-MacBook-Pro data % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .env
+	new file:   script.js
+	new file:   style.css
+
+vilistudyuser@Wills-MacBook-Pro data % git -m "Rijesen zadatak 1 i 2"
+unknown option: -m
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+vilistudyuser@Wills-MacBook-Pro data % git push
+Everything up-to-date
+vilistudyuser@Wills-MacBook-Pro data % cd ..
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -a  data
+.		..		.env		script.js	style.css
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cp -v data/* backup 
+data/script.js -> backup/script.js
+data/style.css -> backup/style.css
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cp -v data/.* backup
+data/.env -> backup/.env
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cd data 
+vilistudyuser@Wills-MacBook-Pro data % ls     
+script.js	style.css
+vilistudyuser@Wills-MacBook-Pro data % ls -R            
+script.js	style.css
+vilistudyuser@Wills-MacBook-Pro data % tree
+.
+├── script.js
+└── style.css
+
+1 directory, 2 files
+vilistudyuser@Wills-MacBook-Pro data % cd ..
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % tree
+.
+├── backup
+│   ├── script.js
+│   └── style.css
+└── data
+    ├── script.js
+    └── style.css
+
+3 directories, 4 files
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cd data 
+vilistudyuser@Wills-MacBook-Pro data % ls -laS ../backup 
+total 24
+drwxr-xr-x  5 vilistudyuser  staff  160 Mar 24 21:29 .
+drwxr-xr-x  4 vilistudyuser  staff  128 Mar 24 21:15 ..
+-rw-r--r--  1 vilistudyuser  staff   36 Mar 24 21:28 style.css
+-rw-r--r--  1 vilistudyuser  staff   29 Mar 24 21:28 script.js
+-rw-r--r--  1 vilistudyuser  staff   10 Mar 24 21:29 .env
+vilistudyuser@Wills-MacBook-Pro data % ls -lAS ../backup
+total 24
+-rw-r--r--  1 vilistudyuser  staff  36 Mar 24 21:28 style.css
+-rw-r--r--  1 vilistudyuser  staff  29 Mar 24 21:28 script.js
+-rw-r--r--  1 vilistudyuser  staff  10 Mar 24 21:29 .env
+vilistudyuser@Wills-MacBook-Pro data % cd ..
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   data/.env
+	new file:   data/script.js
+	new file:   data/style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	backup/
+
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % git add .
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   backup/.env
+	new file:   backup/script.js
+	new file:   backup/style.css
+	new file:   data/.env
+	new file:   data/script.js
+	new file:   data/style.css
+
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % git commit -m "Rjesen zadatak 3"
+[main cf386e0] Rjesen zadatak 3
+ 6 files changed, 6 insertions(+)
+ create mode 100644 OS-2zadaca/vjezba_2/backup/.env
+ create mode 100644 OS-2zadaca/vjezba_2/backup/script.js
+ create mode 100644 OS-2zadaca/vjezba_2/backup/style.css
+ create mode 100644 OS-2zadaca/vjezba_2/data/.env
+ create mode 100644 OS-2zadaca/vjezba_2/data/script.js
+ create mode 100644 OS-2zadaca/vjezba_2/data/style.css
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % git push
+^[[A^[[AEnumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 642 bytes | 642.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/vkovac-unipu/FIPU-OS-zadace.git
+To https://github.com/vkovac1-max/FIPU-OS-zadace.git
+   11d4949..cf386e0  main -> main
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % git status                      
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -A
+backup	data
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % tree
+.
+├── backup
+│   ├── script.js
+│   └── style.css
+└── data
+    ├── script.js
+    └── style.css
+
+3 directories, 4 files
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % rm -vi data/*
+zsh: sure you want to delete all 2 files in /Users/vilistudyuser/Vili/College_Files/Pula/2semestar/OS/Github/FIPU-OS-zadace/OS-2zadaca/vjezba_2/data [yn]? y
+remove data/script.js? 
+remove data/style.css? y
+data/style.css
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -a data 
+.		..		.env		script.js
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % rm -vi data/script.js
+remove data/script.js? y
+data/script.js
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -a data           
+.	..	.env
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % tree
+.
+├── backup
+│   ├── script.js
+│   └── style.css
+└── data
+
+3 directories, 2 files
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % tree -a
+.
+├── backup
+│   ├── .env
+│   ├── script.js
+│   └── style.css
+└── data
+    └── .env
+
+3 directories, 4 files
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % man cp
+Unknown locale, assuming C
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cp -vn backup/* backup/.* data/
+backup/script.js -> data/script.js
+backup/style.css -> data/style.css
+data/.env not overwritten
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % tree -a
+.
+├── backup
+│   ├── .env
+│   ├── script.js
+│   └── style.css
+└── data
+    ├── .env
+    ├── script.js
+    └── style.css
+
+3 directories, 6 files
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -lAt1 data/
+style.css
+script.js
+.env
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -l -A -t -1 data 
+style.css
+script.js
+.env
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -lA -1 -T
+backup
+data
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -lA -1 -t
+data
+backup
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % ls -lA -1 -t data/
+style.css
+script.js
+.env
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cd data 
+vilistudyuser@Wills-MacBook-Pro data % ls -ltA1
+style.css
+script.js
+.env
+vilistudyuser@Wills-MacBook-Pro data % ls -lAt
+total 24
+-rw-r--r--  1 vilistudyuser  staff  36 Mar 24 21:46 style.css
+-rw-r--r--  1 vilistudyuser  staff  29 Mar 24 21:46 script.js
+-rw-r--r--  1 vilistudyuser  staff  10 Mar 24 21:24 .env
+vilistudyuser@Wills-MacBook-Pro data % tree -aL1
+.
+├── .env
+├── script.js
+└── style.css
+
+1 directory, 3 files
+vilistudyuser@Wills-MacBook-Pro data % cd ..   
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % cd ..
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % git add .
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % git commit --allow-empty -m "Rjesen zadatak 4"
+[main 44b4579] Rjesen zadatak 4
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 190 bytes | 190.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/vkovac-unipu/FIPU-OS-zadace.git
+To https://github.com/vkovac1-max/FIPU-OS-zadace.git
+   cf386e0..44b4579  main -> main
+vilistudyuser@Wills-MacBook-Pro OS-2zadaca % cd ..
+vilistudyuser@Wills-MacBook-Pro FIPU-OS-zadace % cdf 
+zsh: command not found: cdf
+vilistudyuser@Wills-MacBook-Pro FIPU-OS-zadace % cd ../..
+vilistudyuser@Wills-MacBook-Pro OS % cd ../..
+vilistudyuser@Wills-MacBook-Pro Pula % cd 2semestar/DirTemp 
+vilistudyuser@Wills-MacBook-Pro DirTemp % ls -laS
+total 16
+-rw-r--r--@ 1 vilistudyuser  staff  6148 Mar 24 22:06 .DS_Store
+drwxr-xr-x@ 8 vilistudyuser  staff   256 Mar 24 22:07 ..
+drwx------  7 vilistudyuser  staff   224 Mar 24 22:07 INSANE HOME FAT LOSS Mike Chang
+drwxr-xr-x  7 vilistudyuser  staff   224 Mar 24 22:05 Materijali
+drwxr-xr-x  6 vilistudyuser  staff   192 Mar 24 22:07 .
+drwxr-xr-x  4 vilistudyuser  staff   128 Mar 24 22:06 Projekt
+vilistudyuser@Wills-MacBook-Pro DirTemp % ls -lSh
+total 0
+drwx------  7 vilistudyuser  staff   224B Mar 24 22:07 INSANE HOME FAT LOSS Mike Chang
+drwxr-xr-x  7 vilistudyuser  staff   224B Mar 24 22:05 Materijali
+drwxr-xr-x  4 vilistudyuser  staff   128B Mar 24 22:06 Projekt
+vilistudyuser@Wills-MacBook-Pro DirTemp % tree -a 
+.
+├── .DS_Store
+├── INSANE HOME FAT LOSS Mike Chang
+│   ├── .DS_Store
+│   ├── Exercise Substitution Print Out 1.pdf
+│   ├── Insane Home Fat Loss
+│   │   ├── IHFL Day 1 - The Wakeup Call (Fit Test).mov
+│   │   ├── IHFL Day 2 - The Fatal Assassin (Chest, back, core) .mov
+│   │   ├── IHFL Day 3 - Maximum After-Burn (Legs, Core).mov
+│   │   ├── IHFL Day 4 - The Super Hero (Shoulders, Triceps, Core).mov
+│   │   ├── IHFL Day 5 - The Fat Destroyer (Abs, Core, Cardio) .mov
+│   │   ├── IHFL Day 6 - Upper Body Blaster (Chest, Back, Delts).mov
+│   │   ├── IHFL Day 7 - The Knock Out (Legs, Core).mov
+│   │   ├── IHFL Day 8 - The Kamikaze (Delts, Triceps, Core).mov
+│   │   └── IHFL Day 9 - Cores Galore.mov
+│   ├── ZWES FINAL.pdf
+│   └── sixpackshortcuts_workouts2.pdf
+├── Materijali
+│   ├── .DS_Store
+│   ├── Baze
+│   │   └── 8. Modeliranje baza podataka II.pdf
+│   ├── MatAnaliza
+│   │   ├── .DS_Store
+│   │   ├── FunkcViseVar.pdf
+│   │   └── ProduktiVektora.pdf
+│   ├── OS2 - Zastavice CLI naredbi-2.pdf
+│   └── Vježbe 3-2.pdf
+└── Projekt
+    ├── .DS_Store
+    └── pop-lyrics-analysis-main
+        ├── Lyrical Simplification.html
+        ├── Lyrical Simplification.ipynb
+        └── README.md
+
+8 directories, 25 files
+vilistudyuser@Wills-MacBook-Pro DirTemp % cd INSANE\ HOME\ FAT\ LOSS\ Mike\ Chang 
+vilistudyuser@Wills-MacBook-Pro INSANE HOME FAT LOSS Mike Chang % rm *.mov                               
+zsh: no matches found: *.mov
+vilistudyuser@Wills-MacBook-Pro INSANE HOME FAT LOSS Mike Chang % ls
+Exercise Substitution Print Out 1.pdf	ZWES FINAL.pdf
+Insane Home Fat Loss			sixpackshortcuts_workouts2.pdf
+vilistudyuser@Wills-MacBook-Pro INSANE HOME FAT LOSS Mike Chang % cd Insane\ Home\ Fat\ Loss 
+vilistudyuser@Wills-MacBook-Pro Insane Home Fat Loss % ls
+IHFL Day 1 - The Wakeup Call (Fit Test).mov
+IHFL Day 2 - The Fatal Assassin (Chest, back, core) .mov
+IHFL Day 3 - Maximum After-Burn (Legs, Core).mov
+IHFL Day 4 - The Super Hero (Shoulders, Triceps, Core).mov
+IHFL Day 5 - The Fat Destroyer (Abs, Core, Cardio) .mov
+IHFL Day 6 - Upper Body Blaster (Chest, Back, Delts).mov
+IHFL Day 7 - The Knock Out (Legs, Core).mov
+IHFL Day 8 - The Kamikaze (Delts, Triceps, Core).mov
+IHFL Day 9 - Cores Galore.mov
+vilistudyuser@Wills-MacBook-Pro Insane Home Fat Loss % rm IHFL\ Day\ 1\ -\ The\ Wakeup\ Call\ \(Fit\ Test\).mov  IHFL\ Day\ 2\ -\ The\ Fatal\ Assassin\ \(Chest,\ back,\ core\)\ .mov  IHFL\ Day\ 3\ -\ Maximum\ After-Burn\ \(Legs,\ Core\).mov IHFL\ Day\ 4\ -\ The\ Super\ Hero\ \(Shoulders,\ Triceps,\ Core\).mov IHFL\ Day\ 5 IHFL\ Day\ 6\ -\ Upper\ Body\ Blaster\ \(Chest,\ Back,\ Delts\).mov
+rm: IHFL Day 5: No such file or directory
+vilistudyuser@Wills-MacBook-Pro Insane Home Fat Loss % rm *.mov
+vilistudyuser@Wills-MacBook-Pro Insane Home Fat Loss % ls
+vilistudyuser@Wills-MacBook-Pro Insane Home Fat Loss % cd ..
+vilistudyuser@Wills-MacBook-Pro INSANE HOME FAT LOSS Mike Chang % rm Insane\ Home\ Fat\ Loss 
+rm: Insane Home Fat Loss: is a directory
+vilistudyuser@Wills-MacBook-Pro INSANE HOME FAT LOSS Mike Chang % cd ../..
+vilistudyuser@Wills-MacBook-Pro 2semestar % cd DirTemp 
+vilistudyuser@Wills-MacBook-Pro DirTemp % ls -laS
+total 16
+-rw-r--r--@ 1 vilistudyuser  staff  6148 Mar 24 22:06 .DS_Store
+drwxr-xr-x@ 8 vilistudyuser  staff   256 Mar 24 22:07 ..
+drwx------  7 vilistudyuser  staff   224 Mar 24 22:07 INSANE HOME FAT LOSS Mike Chang
+drwxr-xr-x  7 vilistudyuser  staff   224 Mar 24 22:05 Materijali
+drwxr-xr-x  6 vilistudyuser  staff   192 Mar 24 22:07 .
+drwxr-xr-x  4 vilistudyuser  staff   128 Mar 24 22:06 Projekt
+vilistudyuser@Wills-MacBook-Pro DirTemp % ls -lhS
+total 0
+drwx------  7 vilistudyuser  staff   224B Mar 24 22:07 INSANE HOME FAT LOSS Mike Chang
+drwxr-xr-x  7 vilistudyuser  staff   224B Mar 24 22:05 Materijali
+drwxr-xr-x  4 vilistudyuser  staff   128B Mar 24 22:06 Projekt
+vilistudyuser@Wills-MacBook-Pro DirTemp % tree -a
+.
+├── .DS_Store
+├── INSANE HOME FAT LOSS Mike Chang
+│   ├── .DS_Store
+│   ├── Exercise Substitution Print Out 1.pdf
+│   ├── Insane Home Fat Loss
+│   ├── ZWES FINAL.pdf
+│   └── sixpackshortcuts_workouts2.pdf
+├── Materijali
+│   ├── .DS_Store
+│   ├── Baze
+│   │   └── 8. Modeliranje baza podataka II.pdf
+│   ├── MatAnaliza
+│   │   ├── .DS_Store
+│   │   ├── FunkcViseVar.pdf
+│   │   └── ProduktiVektora.pdf
+│   ├── OS2 - Zastavice CLI naredbi-2.pdf
+│   └── Vježbe 3-2.pdf
+└── Projekt
+    ├── .DS_Store
+    └── pop-lyrics-analysis-main
+        ├── Lyrical Simplification.html
+        ├── Lyrical Simplification.ipynb
+        └── README.md
+
+8 directories, 16 files
+vilistudyuser@Wills-MacBook-Pro DirTemp % cd ..
+vilistudyuser@Wills-MacBook-Pro 2semestar % cd OS/Github/FIPU-OS-zadace/OS-2zadaca/vjezba_2 
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % history > vjezba_2_history.txt
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % history > vjezba_2_history.txt 
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % nano vjezba_2_history.txt 
+vilistudyuser@Wills-MacBook-Pro vjezba_2 % 
+
+Pitanje iz Zad2: naredbom cat
+Pitanje iz Zad4: naredbom tree
+Primjer rezultata:
+
+vilistudyuser@Wills-MacBook-Pro data % tree -a -p -h -D
+[drwxr-xr-x  160 Mar 24 21:46]  .
+├── [-rw-r--r--   10 Mar 24 21:24]  .env
+├── [-rw-r--r--   29 Mar 24 21:46]  script.js
+└── [-rw-r--r--   36 Mar 24 21:46]  style.css
+
